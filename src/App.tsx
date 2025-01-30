@@ -1,7 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import LoadingAnimation from './components/LoadingAnimation/LoadingAnimation';
-import LinkItem from './components/LinkItem/LinkItem';
-import RandomButton from './components/RandomButton/RandomButton';
+import LinkItem from './components/LinkItem/LinkItem';;
 import './App.css';
 import EmailItem from './components/EmailItem/EmailItem';
 import WinnerText from './components/WinnerText/WinnerText';
@@ -150,9 +149,6 @@ const App = () => {
               Built mission control software GUI for data visualization and sensor monitoring.
             </p>
           </div>
-        </div>
-        <div className="footer-section">
-          <RandomButton />
         </div>
       </div>
     </>
