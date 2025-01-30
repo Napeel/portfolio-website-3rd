@@ -684,3 +684,12 @@ a::before {
   width: 100%;
   max-width: 600px;
 }
+
+.content-container {
+  opacity: 0;
+  transition: opacity 1.5s ease-in;
+}
+
+.content-container.visible {
+  opacity: 1;
+}

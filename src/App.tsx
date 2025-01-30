@@ -27,6 +27,7 @@ const useSection = () => {
 };
 
 const App = () => {
+  const [contentVisible, setContentVisible] = useState(false);
   const sections = {
     header: useSection(),
     about: useSection(),
@@ -34,10 +35,16 @@ const App = () => {
     projects: useSection()
   };
 
+  useEffect(() => {
+    setTimeout(() => {
+      setContentVisible(true);
+    }, 2000);
+  }, []);
+
   return (
     <>
       <LoadingAnimation />
-      <div className="container">
+      <div className={`content-container ${contentVisible ? 'visible' : ''}`}>
         <div ref={sections.header.ref} className={`section ${sections.header.visible ? 'visible' : ''}`}>
           <h1>Nabil Muzafar Shah</h1>
           <p>Software Engineer</p>
