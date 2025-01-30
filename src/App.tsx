@@ -151,8 +151,10 @@ const App = () => {
             </p>
           </div>
         </div>
+        <div className="footer-section">
+          <RandomButton />
+        </div>
       </div>
-      <RandomButton />
     </>
   );
 };

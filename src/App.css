@@ -598,76 +598,6 @@ a::before {
 .animation-glitch {
   animation: glitch 0.3s steps(2) forwards;
 }
-
-.triangle-button {
-  position: fixed;
-  padding: 8px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: var(--accent-color);
-  opacity: 0.5;
-  transition: opacity 0.3s ease;
-  z-index: 100;
-  animation: moveAroundScreen 60s linear infinite;
-}
-
-.triangle-button:hover {
-  opacity: 1;
-  animation-play-state: paused;
-}
-
-.triangle-icon {
-  width: 12px;
-  height: 12px;
-  animation: rotateTriangle 60s linear infinite;
-}
-
-.triangle-button:hover .triangle-icon {
-  animation-play-state: paused;
-}
-
-@keyframes moveAroundScreen {
-  0% {
-    top: 0;
-    left: 0;
-  }
-  25% {
-    top: 0;
-    left: calc(100% - 28px);
-  }
-  50% {
-    top: calc(100% - 28px);
-    left: calc(100% - 28px);
-  }
-  75% {
-    top: calc(100% - 28px);
-    left: 0;
-  }
-  100% {
-    top: 0;
-    left: 0;
-  }
-}
-
-@keyframes rotateTriangle {
-  0% {
-    transform: rotate(0deg); 
-  }
-  25% {
-    transform: rotate(90deg);
-  }
-  50% {
-    transform: rotate(180deg);
-  }
-  75% {
-    transform: rotate(270deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
 .email-container {
   margin: var(--spacing-unit) auto;
   display: flex;
@@ -685,11 +615,31 @@ a::before {
   max-width: 600px;
 }
 
+.app-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .content-container {
+  flex: 1;
   opacity: 0;
   transition: opacity 1.5s ease-in;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .content-container.visible {
   opacity: 1;
+}
+
+.footer-section {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 8px;
+  margin-top: auto;
 }
