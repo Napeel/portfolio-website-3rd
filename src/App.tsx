@@ -150,6 +150,9 @@ const App = () => {
               Built mission control software GUI for data visualization and sensor monitoring.
             </p>
           </div>
+          <div className="hidden-message">
+            You've made it to the bottom, now what?
+         </div>
         </div>
       </div>
     </>

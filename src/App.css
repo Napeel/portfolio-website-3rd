@@ -168,10 +168,6 @@ p {
   margin-top: clamp(3rem, 6vw, 5rem);
 }
 
-.section:last-child {
-  margin-bottom: 0;
-}
-
 .section.visible {
   opacity: 1;
   transform: translateY(0);
@@ -264,6 +260,11 @@ p {
   
   .section {
     margin: calc(var(--spacing-unit) * 2) 0;
+  }
+
+  .section:last-child {
+    margin-bottom: clamp(6rem, 12vw, 8rem);
+    padding-bottom: clamp(3rem, 6vw, 4rem);
   }
 
   .skills-grid {
@@ -743,6 +744,7 @@ a::before {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: clamp(6rem, 12vw, 8rem);
 }
 
 .content-container.visible {
@@ -776,7 +778,7 @@ a::before {
     flex-direction: column;
     gap: 1rem;
     padding: 0;
-    transform: translateX(-4px); /* Slight adjustment for visual center */
+    transform: translateX(-4px);
   }
 
   .link-container {
@@ -792,4 +794,17 @@ a::before {
   margin-top: 0.5rem;
   font-style: italic;
   animation: fadeIn 1s ease-in forwards;
+}
+
+.hidden-message {
+  margin-top: clamp(6rem, 12vw, 8rem);
+  font-size: 0.7rem;
+  color: var(--text-color);
+  opacity: 0.15;
+  font-style: italic;
+  transition: opacity 0.3s ease;
+}
+
+.hidden-message:hover {
+  opacity: 0.4;
 }
