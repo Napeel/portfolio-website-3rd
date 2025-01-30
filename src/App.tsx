@@ -48,11 +48,12 @@ const App = () => {
         <div ref={sections.header.ref} className={`section ${sections.header.visible ? 'visible' : ''}`}>
           <h1>Nabil Muzafar Shah</h1>
           <p>Software Engineer</p>
+          <p className="disclaimer-text">website is still a work in progress and not fully updated!</p>
         </div>
 
         <div ref={sections.about.ref} className={`section ${sections.about.visible ? 'visible' : ''}`}>
           <h2>About</h2>
-          <p>Hey. I'm a software engineer based in Montreal, part of the Software Engineering Co-op program at McGill University.</p>
+          <p>Hey. I'm a software engineer based in Montreal, part of the Software Engineering Co-op program at McGill University. Don't hesitate to send me a message I'm always open to chat!</p>
           <div className="social-links-container">
             <LinkItem 
               platform="github"
@@ -112,7 +113,7 @@ const App = () => {
                   <path fill="currentColor" d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/>
                 </svg>
               </a>. 
-              Built with TypeScript, React, Python. Interactive frontend for visualizing blood test results through intuitive charts with AI-powered private chat.
+              Built with TypeScript, React, Python. Interactive app for visualizing blood test results through intuitive charts with AI-powered private chat.
             </p>
           </div>
 
