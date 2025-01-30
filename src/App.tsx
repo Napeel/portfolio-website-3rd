@@ -4,6 +4,7 @@ import LinkItem from './components/LinkItem/LinkItem';
 import RandomButton from './components/RandomButton/RandomButton';
 import './App.css';
 import EmailItem from './components/EmailItem/EmailItem';
+import WinnerText from './components/WinnerText/WinnerText';
 
 
 const useSection = () => {
@@ -100,7 +101,7 @@ const App = () => {
               <span className="project-date">Jan 2025</span>
             </div>
             <p className="project-description">
-              Winner of Telus Sponsor Challenge at{" "}
+              <WinnerText /> of Telus Sponsor Challenge at{" "}
               <a 
                 href="https://mchacks-12.devpost.com/" 
                 target="_blank" 

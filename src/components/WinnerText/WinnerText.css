@@ -1,0 +1,72 @@
+.winner-text {
+  color: #FFD700;
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.winner-text.animate {
+  animation: popIn 0.5s forwards;
+}
+
+.winner-text:hover {
+  color: #FFC000;
+}
+
+.confetti-container {
+  position: absolute;
+  width: 100%;
+  height: 60px;
+  top: -6px;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.confetti {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  left: var(--left);
+  top: -10px; 
+  background: linear-gradient(
+    var(--hue, 45deg),
+    #FFD700,
+    #FFC000
+  );
+  animation: confettiFall 1.2s var(--delay) linear infinite;
+  transform-origin: center;
+}
+
+.winner-text.animate .confetti {
+  animation: confettiFall 1s var(--delay) forwards;
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  70% {
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes confettiFall {
+  0% {
+    opacity: 1;
+    transform: translateY(-10px) rotate(0deg) scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translateY(20px) rotate(180deg) scale(0.8);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(50px) rotate(360deg) scale(0.5);
+  }
+}
