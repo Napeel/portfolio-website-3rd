@@ -119,7 +119,7 @@ const App = () => {
 
           <div className="project-item">
             <div className="project-header">
-              <span className="project-title">Emoflix</span>
+              <span className="project-title">Emotiflix</span>
               <span className="project-date">Aug 2024 - Present</span>
             </div>
             <p className="project-description">
