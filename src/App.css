@@ -808,3 +808,72 @@ a::before {
 .hidden-message:hover {
   opacity: 0.4;
 }
+
+.contact-form-container {
+  margin-top: 40px;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border: none; 
+  text-align: center;
+}
+
+.contact-form-container h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center; 
+  color: var(--accent-color);
+  border-bottom: 1px solid var(--accent-color);
+  padding-bottom: 0.5em;
+  font-weight: 600; 
+}
+
+.form-group {
+  margin-bottom: 15px;
+  text-align: left; 
+}
+
+.form-group label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: var(--text-color);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid var(--accent-color);
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  outline: none;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--hover-color); 
+  box-shadow: 0 0 5px var(--hover-color);
+}
+
+.contact-form-container button {
+  background-color: transparent;
+  color: var(--text-color);
+  padding: 10px 20px;
+  border: 1px solid var(--accent-color);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.contact-form-container button:hover {
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+}
