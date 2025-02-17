@@ -4,7 +4,7 @@ import LinkItem from './components/LinkItem/LinkItem';;
 import './App.css';
 import EmailItem from './components/EmailItem/EmailItem';
 import WinnerText from './components/WinnerText/WinnerText';
-
+import emailjs from 'emailjs-com';
 
 const useSection = () => {
   const ref = useRef<HTMLDivElement>(null);
@@ -46,11 +46,26 @@ const App = () => {
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // TODO: Implement backend integration to send email
-    console.log('Form submitted', { name, email, subject, message });
-    alert('Form submission is a work in progress! Please contact me via email or LinkedIn.'); // Temporary message
+
+    emailjs.sendForm(
+      'service_1eniioi',
+      'template_hdhpgnd',
+      e.currentTarget,
+      'q6pvZ-wbdpyeXvk9E'
+    )
+    .then((result) => {
+      console.log('Email sent!', result.text);
+      alert("Message sent successfully!");
+      setName('');
+      setEmail('');
+      setSubject('');
+      setMessage('');
+    }, (error) => {
+      console.error('Email send error:', error.text);
+      alert("There was an error sending your message, please try again later.");
+    });
   };
 
   return (
@@ -162,9 +177,6 @@ const App = () => {
               Built mission control software GUI for data visualization and sensor monitoring.
             </p>
           </div>
-          <div className="hidden-message">
-            You've made it to the bottom, now what?
-         </div>
         </div>
 
          {/* Contact Form */}
@@ -176,6 +188,7 @@ const App = () => {
               <input
                 type="text"
                 id="name"
+                name="user_name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 required
@@ -186,6 +199,7 @@ const App = () => {
               <input
                 type="email"
                 id="email"
+                name="user_email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
@@ -196,6 +210,7 @@ const App = () => {
               <input
                 type="text"
                 id="subject"
+                name="subject"
                 value={subject}
                 onChange={(e) => setSubject(e.target.value)}
                 required
@@ -205,6 +220,7 @@ const App = () => {
               <label htmlFor="message">Message</label>
               <textarea
                 id="message"
+                name="message"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 rows={5}
@@ -213,6 +229,11 @@ const App = () => {
             </div>
             <button type="submit">Send Message</button>
           </form>
+        </div>
+
+        {/* Hidden Message */}
+        <div className="hidden-message">
+          You've made it to the bottom, now what?
         </div>
       </div>
     </>
