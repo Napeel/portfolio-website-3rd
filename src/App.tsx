@@ -80,7 +80,19 @@ const App = () => {
 
         <div ref={sections.about.ref} className={`section ${sections.about.visible ? 'visible' : ''}`}>
           <h2>About</h2>
-          <p>Hey. I'm a software engineer based in Montreal, part of the Software Engineering Co-op program at McGill University. Don't hesitate to send me a message I'm always open to chat!</p>
+          <p>
+            Hey. I'm a software engineer based in Montreal, part of the Software Engineering Co-op program at McGill University.
+            I'm currently working as a frontend developer at&nbsp;
+            <a 
+              href="https://www.empor.ca/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              style={{ color: 'var(--accent-color)', textDecoration: 'none' }}
+            >
+              Empor
+            </a>
+            &nbsp;check it out! Don't hesitate to send me a message—I'm always open to chat!
+          </p>
           <div className="social-links-container">
             <LinkItem 
               platform="github"
@@ -114,6 +126,31 @@ const App = () => {
             <div className="project-header">
               <span className="project-title">
                 <a 
+                  href="https://www.empor.ca/"
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="project-title-link"
+                >
+                  Empor
+                  <svg className="external-link-icon" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/>
+                  </svg>
+                </a>
+              </span>
+              <span className="project-date">Feb 2025 - Present</span>
+            </div>
+            <p className="project-description">
+              <span className="project-role">Software Developer</span>
+              <span className="project-details">
+                Leveraging Next.js, React, and TypeScript to build dynamic, responsive UIs for empor.ca.
+              </span>
+            </p>
+          </div>
+
+          <div className="project-item">
+            <div className="project-header">
+              <span className="project-title">
+                <a 
                   href="https://devpost.com/software/vitals-me" 
                   target="_blank" 
                   rel="noopener noreferrer"
@@ -128,7 +165,7 @@ const App = () => {
               <span className="project-date">Jan 2025</span>
             </div>
             <p className="project-description">
-              <WinnerText /> of Telus Sponsor Challenge at{" "}
+              <WinnerText /> of Telus Sponsor Challenge at&nbsp;
               <a 
                 href="https://mchacks-12.devpost.com/" 
                 target="_blank" 

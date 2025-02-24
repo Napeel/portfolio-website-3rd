@@ -351,8 +351,15 @@ p {
 }
 
 .project-title {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.project-title {
   font-size: 1.5rem;
-  margin-bottom: var(--spacing-unit);
+  margin: var(--spacing-unit);
   transition: opacity var(--animation-timing) ease;
   position: relative;
   cursor: pointer;
@@ -361,6 +368,8 @@ p {
   opacity: 0.8;
   transition: opacity var(--transition-speed) ease;
   word-break: break-word;
+  display: flex;
+  align-items: center;
 }
 
 .project-title:hover {
@@ -532,19 +541,22 @@ a::before {
 .project-header {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
-  margin-bottom: var(--spacing-unit);
+  align-items: center;
+  margin-bottom: 0;
   flex-wrap: wrap;
 }
 
 .project-title {
   font-size: 1.2rem;
   font-weight: 500;
+  align-items: center;
 }
 
 .project-date {
   color: var(--accent-color);
   font-size: 0.9rem;
+  display: flex;
+  align-items: center;
 }
 
 .project-description {
@@ -554,6 +566,7 @@ a::before {
   overflow-wrap: break-word;
   word-wrap: break-word;
   hyphens: auto;
+  text-align: center;
 }
 
 .inline-link {
@@ -866,6 +879,9 @@ a::before {
 }
 
 .contact-form-container button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   background: transparent;
   border: 1px solid var(--accent-color);
   color: var(--accent-color);
@@ -898,7 +914,7 @@ a::before {
 .contact-form-container .form-group label {
   text-align: center;
   font-size: clamp(1rem, 2vw, 1.2rem);
-  font-weight: 600;
+  font-weight: 400;
   color: var(--accent-color);
   margin: 0.75rem 0; 
 }
@@ -918,4 +934,16 @@ a::before {
 .contact-form-container .form-group textarea:focus {
   border-color: var(--hover-color);
   box-shadow: 0 0 5px var(--hover-color);
+}
+
+.project-role {
+  display: block;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-weight: 600;
+  color: var(--accent-color);
+}
+
+.project-details {
+  display: block;
+  margin-top: 0;
 }
