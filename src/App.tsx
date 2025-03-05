@@ -140,7 +140,7 @@ const App = () => {
               <span className="project-date">Feb 2025 - Present</span>
             </div>
             <p className="project-description">
-              <span className="project-role">Software Developer</span>
+              <span className="project-role">Software Engineer Intern</span>
               <span className="project-details">
                 Leveraging Next.js, React, and TypeScript to build dynamic, responsive UIs for empor.ca.
               </span>
