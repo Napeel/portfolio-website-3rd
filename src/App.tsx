@@ -5,6 +5,12 @@ import './App.css';
 import EmailItem from './components/EmailItem/EmailItem';
 import WinnerText from './components/WinnerText/WinnerText';
 import emailjs from 'emailjs-com';
+import { Button } from "./components/ui/button";
+import { Input } from "./components/ui/input";
+import { Label } from "./components/ui/label";
+import { Textarea } from "./components/ui/textarea";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "./components/ui/card";
+import "./globals.css"; // Make sure this is imported to apply Tailwind styles
 
 const useSection = () => {
   const ref = useRef<HTMLDivElement>(null);
@@ -32,7 +38,8 @@ const App = () => {
     header: useSection(),
     about: useSection(),
     skills: useSection(),
-    projects: useSection()
+    projects: useSection(),
+    contact: useSection()
   };
 
   useEffect(() => {
@@ -216,56 +223,74 @@ const App = () => {
           </div>
         </div>
 
-         {/* Contact Form */}
-         <div className="contact-form-container">
-          <h2>Contact Me</h2>
-          <form onSubmit={handleSubmit}>
-            <div className="form-group">
-              <label htmlFor="name">Name</label>
-              <input
-                type="text"
-                id="name"
-                name="user_name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                required
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="email">Email</label>
-              <input
-                type="email"
-                id="email"
-                name="user_email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="subject">Subject</label>
-              <input
-                type="text"
-                id="subject"
-                name="subject"
-                value={subject}
-                onChange={(e) => setSubject(e.target.value)}
-                required
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="message">Message</label>
-              <textarea
-                id="message"
-                name="message"
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                rows={5}
-                required
-              />
-            </div>
-            <button type="submit">Send Message</button>
-          </form>
+        {/* Contact Form */}
+        <div ref={sections.contact.ref} className={`section ${sections.contact.visible ? 'visible' : ''}`}>
+          <h2 className="text-center text-3xl font-semibold text-primary">Contact Me</h2>
+          <p className="text-center opacity-80 mb-8">Have a question or want to work together?</p>
+          
+          <Card className="mx-auto max-w-md bg-black/30 border-accent">
+            <CardHeader>
+              <CardTitle className="text-xl font-medium">Get in touch</CardTitle>
+              <CardDescription>Fill out the form below and I'll get back to you as soon as possible.</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="space-y-2">
+                  <Label htmlFor="name">Name</Label>
+                  <Input
+                    id="name"
+                    name="user_name"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    className="bg-background border-input"
+                    required
+                  />
+                </div>
+                
+                <div className="space-y-2">
+                  <Label htmlFor="email">Email</Label>
+                  <Input
+                    type="email"
+                    id="email"
+                    name="user_email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="bg-background border-input"
+                    required
+                  />
+                </div>
+                
+                <div className="space-y-2">
+                  <Label htmlFor="subject">Subject</Label>
+                  <Input
+                    id="subject"
+                    name="subject"
+                    value={subject}
+                    onChange={(e) => setSubject(e.target.value)}
+                    className="bg-background border-input"
+                    required
+                  />
+                </div>
+                
+                <div className="space-y-2">
+                  <Label htmlFor="message">Message</Label>
+                  <Textarea
+                    id="message"
+                    name="message"
+                    rows={5}
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    className="bg-background border-input resize-none"
+                    required
+                  />
+                </div>
+                
+                <Button type="submit" className="w-full bg-accent text-black hover:bg-accent/80">
+                  Send Message
+                </Button>
+              </form>
+            </CardContent>
+          </Card>
         </div>
 
         {/* Hidden Message */}
