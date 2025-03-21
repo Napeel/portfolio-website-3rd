@@ -5,6 +5,7 @@ import './App.css';
 import EmailItem from './components/EmailItem/EmailItem';
 import WinnerText from './components/WinnerText/WinnerText';
 import emailjs from 'emailjs-com';
+import ContactForm from './components/ContactForm/ContactForm';
 
 const useSection = () => {
   const ref = useRef<HTMLDivElement>(null);
@@ -216,57 +217,8 @@ const App = () => {
           </div>
         </div>
 
-         {/* Contact Form */}
-         <div className="contact-form-container">
-          <h2>Contact Me</h2>
-          <form onSubmit={handleSubmit}>
-            <div className="form-group">
-              <label htmlFor="name">Name</label>
-              <input
-                type="text"
-                id="name"
-                name="user_name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                required
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="email">Email</label>
-              <input
-                type="email"
-                id="email"
-                name="user_email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="subject">Subject</label>
-              <input
-                type="text"
-                id="subject"
-                name="subject"
-                value={subject}
-                onChange={(e) => setSubject(e.target.value)}
-                required
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="message">Message</label>
-              <textarea
-                id="message"
-                name="message"
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                rows={5}
-                required
-              />
-            </div>
-            <button type="submit">Send Message</button>
-          </form>
-        </div>
+        {/* Replace the existing contact form with the new component */}
+        <ContactForm />
 
         {/* Hidden Message */}
         <div className="hidden-message">
